@@ -1,0 +1,2 @@
+*{box-sizing:border-box;font-family:Helvetica,sans-serif;margin:0;padding:0}h1{font-size:calc(clamp(1rem, 1rem + 1vw, 2rem)*2)}h1,h2{line-height:120%}h2{font-size:calc(clamp(1rem, 1rem + 1vw, 2rem)*1.5)}h3{font-size:calc(clamp(1rem, 1rem + 1vw, 2rem)*1.25);line-height:120%}input,p{font-size:calc(clamp(.7rem, .6rem + .5vw, .8rem)*1.5)}
+/*# sourceMappingURL=main.adb32516.css.map*/
