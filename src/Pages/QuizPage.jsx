@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { items } from "../data";
 
 function QuizPage() {
+    const navigate = useNavigate();
     const [currentSection, setCurrentSection] = useState("questions");
     const [selectedAnswers, setSelectedAnswers] = useState(Array(items.length).fill(-1));
     const [points, setPoints] = useState({
@@ -136,10 +137,26 @@ function PromotionSection({setSection}) {
                     Yes, I will!
                 </button>
 
+                {/* <button
+                    type="button"
+                    className="reject"
+                    onClick={() => navigate("../result")}
+                >
+                    Next time
+                </button> */}
+
                 <NavLink to="../result" className="reject">
                     Next time
                 </NavLink>
             </div>
+
+            {/* <button
+                type="button"
+                className="finish"
+                onClick={() => navigate("../result")}
+            >
+                Finish &gt;
+            </button> */}
 
             <NavLink to="../result" className="finish">
                 Finish &gt;
