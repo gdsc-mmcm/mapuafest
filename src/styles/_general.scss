@@ -1,8 +1,18 @@
+$neutral-color: lightgray;
+$accent-color: black;
+// $primary-color-one: #4285F4;
+$primary-color-one: white;
+$primary-color-two: #EA4335;
+$primary-color-three: #FBBC04;
+$primary-color-four: #34A853;
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-family: Helvetica, sans-serif;
     box-sizing: border-box;
+    color: $primary-color-one;
+    text-align: center;
 }
 
 @mixin init-flex($direction, $gap, $justify-content: initial, $align-items: initial) {
@@ -22,6 +32,17 @@
     font-size: calc(clamp(0.7rem, 0.6rem + 0.5vw, 0.8rem) * ($size-percentage));
 }
 
+@mixin init-btn($bg-color, $hover-color) {
+    cursor: pointer;
+    background-color: $bg-color;
+    // padding: $padding;
+    border-radius: 500px;
+
+    &:hover, &:active {
+        color: $hover-color;
+    }
+}
+
 h1 {
     @include init-header-size(2);
 }
@@ -36,4 +57,18 @@ h3 {
 
 p, input {
     @include init-plaintext-size(1.5);
+}
+
+a {
+    text-decoration: none;
+}
+
+.App {
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.page {
+    @include init-flex(column, 0, center, center);
+    height: 100%;
 }

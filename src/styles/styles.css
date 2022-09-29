@@ -1,8 +1,10 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-family: Helvetica, sans-serif;
   box-sizing: border-box;
+  color: white;
+  text-align: center;
 }
 
 h1 {
@@ -22,4 +24,51 @@ h3 {
 
 p, input {
   font-size: calc(clamp(0.7rem, 0.6rem + 0.5vw, 0.8rem) * 1.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  height: 100vh;
+  background-color: lightgray;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+}
+
+.home .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 80%;
+  height: 100%;
+  margin: 4rem 0;
+}
+.home .container .greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.home .container .greeting a {
+  cursor: pointer;
+  background-color: black;
+  border-radius: 500px;
+  padding: 1rem 2rem;
+}
+.home .container .greeting a:hover, .home .container .greeting a:active {
+  color: #EA4335;
 }/*# sourceMappingURL=styles.css.map */

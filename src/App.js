@@ -5,11 +5,13 @@ import ResultPage from './Pages/ResultPage';
 
 function App() {
   return (
-    <Routes>
-      <Route exact path='/' element={<HomePage />} />
-      <Route path='quiz' element={<QuizPage />} />
-      <Route path='result' element={<ResultPage />} />
-    </Routes>
+    <div className='App'>
+      <Routes>
+        <Route exact path='/' element={<HomePage />} />
+        <Route path='quiz' element={<QuizPage />} />
+        <Route path='result' element={<ResultPage />} />
+      </Routes>
+    </div>
   );
 }
 

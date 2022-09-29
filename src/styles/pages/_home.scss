@@ -1,5 +1,21 @@
-@use '../general';
+@use '../general' as *;
 
 .home {
-    
+    .container {
+        @include init-flex(column, 0, center, center);
+        width: 80%;
+        height: 100%;
+        margin: 4rem 0;
+
+        .greeting {
+            @include init-flex(column, 2rem, center, center);
+            width: 100%;
+            height: 100%;
+
+            a {
+                @include init-btn($accent-color, $primary-color-two);
+                padding: 1rem 2rem;
+            }
+        }
+    }
 }
