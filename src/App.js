@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<HomePage />} />
         <Route path='quiz' element={<QuizPage />} />
-        <Route path='result' element={<ResultPage />} />
+        <Route path='result/:personalityPath' element={<ResultPage />} />
       </Routes>
     </div>
   );

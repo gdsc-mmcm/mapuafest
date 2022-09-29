@@ -6,12 +6,45 @@ $primary-color-two: #EA4335;
 $primary-color-three: #FBBC04;
 $primary-color-four: #34A853;
 
+$google-blue: #4285F4;
+$google-red: #EA4335;
+$google-yellow: #FBBC04;
+$google-green: #34A853;
+$neutral-dark: #373737;
+
+@font-face {
+    font-family: Google Sans;
+    src: url("../fonts/GoogleSans-Regular-v1.27.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Google Sans;
+    src: url("../fonts/GoogleSans-Medium-v1.27.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Google Sans;
+    src: url("../fonts/GoogleSans-Bold-v1.27.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Open Sans;
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Google Sans, sans-serif;
+}
+
 * {
     padding: 0;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: Open Sans, sans-serif;
     box-sizing: border-box;
-    color: $primary-color-one;
+    color: $neutral-dark;
     text-align: center;
     letter-spacing: -0.05rem;
 }
@@ -33,7 +66,7 @@ $primary-color-four: #34A853;
     font-size: calc(clamp(0.7rem, 0.6rem + 0.5vw, 0.8rem) * ($size-percentage));
 }
 
-@mixin init-btn($bg-color, $text-color, $padding: 1rem 2rem) {
+@mixin init-btn($bg-color, $text-color, $padding: 0.75rem 1.5rem) {
     cursor: pointer;
     background-color: $bg-color;
     color: $text-color;
@@ -71,10 +104,19 @@ a {
 .App {
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: lightgray;
 }
 
 .page {
     @include init-flex(column, 0, center, center);
     height: 100%;
+}
+
+.logo {
+    width: 100%;
+}
+
+@media only screen and (min-width: "1024px") {
+    .logo {
+        width: 30%;
+    }
 }

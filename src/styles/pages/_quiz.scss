@@ -4,31 +4,42 @@
     width: 100%;
 
     .questions {
-        @include init-flex(column, 4rem, center, center);
-        width: 90%;
+        @include init-flex(column, 2rem, center, center);
+        width: 100%;
         height: 100%;
-        margin: 4rem 0;
+        background-color: white;
 
         .head {
-            @include init-flex(column, 1rem);
+            @include init-flex(column, 0, center, center);
             width: 100%;
-            margin-bottom: auto;
+            height: 100%;
+            background-size: cover;
+
+            & * {
+                color: white;
+            }
+
+            .container {
+                @include init-flex(column, 1rem, center, center);
+                width: 80%;
+                height: 100%;
+                padding: 4rem 0 1rem;
+
+                .progress-bar-container {
+                    @include init-flex(column, 0, center, flex-start);
+                    width: 100%;
+                    height: 1rem;
+                    border-radius: 32px;
+                    border-width: 2px;
+                    border-style: solid;
+                    overflow: hidden;
+                    background-color: white;
     
-            .progress-bar-container {
-                width: 100%;
-                height: 1rem;
-                border-radius: 32px;
-                overflow: hidden;
-
-                .progress-bar {
-                    transition: width 0.25s linear;
-
-                    &--complete {
-                        background-color: $accent-color;
-                    }
-
-                    &--incomplete {
-                        background-image: linear-gradient(to right, $accent-color 25%, lightgray);
+                    .progress-bar {
+                        height: 100%;
+                        border-top-left-radius: 32px;
+                        border-bottom-left-radius: 32px;
+                        transition: width 0.25s linear;
                     }
                 }
             }
@@ -36,22 +47,17 @@
 
         .question {
             @include init-flex(column, 0, initial, center);
-            width: 100%;
+            width: 90%;
             height: 100%;
 
             .answers {
-                @include init-flex(column, 1rem, center, center);
+                @include init-flex(column, 1rem, initial, center);
                 padding: min(10%, 3rem) 0;
-                width: 80%;
+                width: 85%;
 
                 .answer {
-                    @include init-btn($accent-color, $primary-color-one);
-                    text-align: left;
+                    @include init-btn(white, black);
                     width: 100%;
-
-                    &--selected {
-                        @include init-btn($primary-color-one, $accent-color);
-                    }
                 }
             }
 
@@ -59,15 +65,15 @@
                 @include init-flex(row, 1rem, center, center);
 
                 button {
-                    @include init-plaintext-size(2);
+                    @include init-plaintext-size(1.75);
                 }
 
                 .back {
-                    @include init-btn($primary-color-one, $accent-color);
+                    @include init-btn(black, white, 1rem 3rem);
                 }
 
                 .next {
-                    @include init-btn($accent-color, $primary-color-one);
+                    @include init-btn(black, white, 1rem 3rem);
 
                     &--inactive {
                         opacity: 0.5;
@@ -76,117 +82,263 @@
                 }
             }
         }
-    }
 
-    .promotion {
-        @include init-flex(column, 0, center, center);
-        width: 80%;
-        height: 100vh;
-
-        h3 {
-            padding: 2rem;
+        .foot {
+            display: none;
         }
 
-        .choices {
-            @include init-flex(column, 1rem, center, center);
-            width: 100%;
+        &--blue {
+            .head {
+                background-image: url("../images/banners/banner_blue.png");
 
-            & > * {
-                width: 80%;
-                text-align: left;
+                .progress-bar {
+                    &--complete {
+                        background-color: $google-blue;
+                    }
+
+                    &--incomplete {
+                        background-image: linear-gradient(to right, $google-blue 25%, white);
+                    }
+                }
             }
 
-            .confirm {
-                @include init-btn($primary-color-one, $accent-color);
+            .question {
+                .answers {
+                    .answer {
+                        &--selected {
+                            box-shadow: 0px 2px 20px -1px $google-blue;
+                        }
+                    }
+                }
+
+                .question-nav {
+                    .next {
+                        background-color: $google-blue;
+                    }
+                }
+            }
+        }
+        
+        &--red {
+            .head {
+                background-image: url("../images/banners/banner_red.png");
+
+                .progress-bar {
+                    &--complete {
+                        background-color: $google-red;
+                    }
+
+                    &--incomplete {
+                        background-image: linear-gradient(to right, $google-red 25%, white);
+                    }
+                }
             }
 
-            .reject {
-                @include init-btn($accent-color, $primary-color-one);
+            .question {
+                .answers {
+                    .answer {
+                        &--selected {
+                            box-shadow: 0px 2px 20px -1px $google-red;
+                        }
+                    }
+                }
+
+                .question-nav {
+                    .next {
+                        background-color: $google-red;
+                    }
+                }
             }
         }
 
-        .finish {
-            @include init-btn($accent-color, $primary-color-one);
-            @include init-plaintext-size(2);
-            width: 80%;
-            margin-top: 4rem;
+        &--yellow {
+            .head {
+                background-image: url("../images/banners/banner_yellow.png");
+
+                .progress-bar {
+                    &--complete {
+                        background-color: $google-yellow;
+                    }
+
+                    &--incomplete {
+                        background-image: linear-gradient(to right, $google-yellow 25%, white);
+                    }
+                }
+            }
+
+            .question {
+                .answers {
+                    .answer {
+                        &--selected {
+                            box-shadow: 0px 2px 20px -1px $google-yellow;
+                        }
+                    }
+                }
+
+                .question-nav {
+                    .next {
+                        background-color: $google-yellow;
+                    }
+                }
+            }
+        }
+
+        &--green {
+            .head {
+                background-image: url("../images/banners/banner_green.png");
+
+                .progress-bar {
+                    &--complete {
+                        background-color: $google-green;
+                    }
+
+                    &--incomplete {
+                        background-image: linear-gradient(to right, $google-green 25%, white);
+                    }
+                }
+            }
+
+            .question {
+                .answers {
+                    .answer {
+                        &--selected {
+                            box-shadow: 0px 2px 20px -1px $google-green;
+                        }
+                    }
+                }
+
+                .question-nav {
+                    .next {
+                        background-color: $google-green;
+                    }
+                }
+            }
         }
     }
 
     .social-media {
-        @include init-flex(column, 2rem, center, center);
-        width: 80%;
+        @include init-flex(column, 0, center, center);
+        width: 100%;
         height: 100vh;
+        background-color: $neutral-dark;
 
-        .links {
-            @include init-flex(column, 1rem, center, center);
-            width: 100%;
+        & * {
+            color: white;
+        }
 
-            a {
-                width: 80%;
+        .container {
+            @include init-flex(column, 2rem, center, center);
+            width: 80%;
+
+            h2 {
+                .in-the-now {
+                    background: -webkit-linear-gradient(0deg, $google-blue, $google-red, $google-yellow, $google-green);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: Google Sans, sans-serif;
+                }
             }
-
-            .facebook {
-                @include init-btn(rgb(64, 129, 235), white);
+    
+            .links {
+                @include init-flex(column, 1rem, center, center);
+                width: 60%;
+    
+                a {
+                    width: 100%;
+                    @include init-flex(row, 1rem, center, center);
+    
+                    img {
+                        height: 2rem;
+                    }
+                }
+    
+                .facebook {
+                    @include init-btn(#324DAB, white);
+                }
+    
+                .instagram {
+                    @include init-btn(black, white);
+                    background: linear-gradient(to right, #A70B72 20%, #FF7A00 60%, #FAFF00 110%);
+                }
             }
-
-            .instagram {
-                @include init-btn($primary-color-one, $accent-color);
+    
+            .finish {
+                @include init-btn(white, black, 1rem 2rem);
+                @include init-plaintext-size(1.75);
+                width: fit-content;
+                margin-top: 2rem;            
             }
         }
 
-        .finish {
-            @include init-btn($accent-color, $primary-color-one);
-            @include init-plaintext-size(2);
-            width: 80%;
-            margin-top: 2rem;            
+        .foot {
+            display: none;
         }
     }
 }
 
 @media only screen and (min-width: "1024px") {
     .quiz {
+        @include init-flex(row, 0, center, stretch);
         .questions {
-            width: 80%;
+            width: 100%;
+            height: 100vh;
             gap: 2rem;
 
             .head {
-                width: 80%;
+                width: 100%;
+
+                .container {
+                    width: 50%;
+                }
             }
 
             .question {
                 .answers {
-                    width: 50%;
-                    padding: 1.5rem 0 3rem;
+                    height: 18rem;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    width: 30%;
+                    padding: 2rem 0;
 
                     .answer {
                         user-select: none;
                     }
                 }
             }
-        }
 
-        .promotion {
-            width: 50%;
-
-            .choices {
-                width: 80%;
-            }
-
-            .finish {
-                width: fit-content;
+            .foot {
+                @include init-flex(row, 0, space-between, center);
+                width: 90%;
+                padding-bottom: 1rem;
+                margin-top: auto;
             }
         }
 
         .social-media {
-            width: 50%;
+            .container {
+                gap: 1rem;
+                flex: 2;
 
-            .links {
-                width: 80%;
+                h2 {
+                    width: 80%;
+                }
+
+                .links {
+                    flex-direction: row;
+                    width: fit-content;
+                }
+    
+                .finish {
+                    margin-top: 0.5rem;
+                    width: fit-content;
+                }
             }
 
-            .finish {
-                width: fit-content;
+            .foot {
+                @include init-flex(row, 0, space-between, center);
+                width: 90%;
+                padding-bottom: 1rem;
+                margin-top: auto;
             }
         }
     }

@@ -3,42 +3,49 @@ const personalities = [
         key: "ds",
         name: "Designer",
         nickname: "The Estetik",
+        urlPath: "designer",
         description: "“Estetik pa more!” Aesthetic is definitely your most Googled word. You love eye-pleasing color schemes and well-balanced art elements! Adobe CC is your best friend and worst enemy. You probably overused Montserrat by now, and you most likely despise Comic Sans."
     },
     {
         key: "pv",
         name: "Photo/Videographer",
         nickname: "The Flash",
+        urlPath: "photovideographer",
         description: "“Lights, camera, action!” You’ve always wanted an iPhone 14 Pro Max 1TB storage fully paid. You light up everyone’s world, literally… because lighting is everything!"
     },
     {
         key: "wr",
         name: "Writer",
         nickname: "The Shakespeare",
+        urlPath: "writer",
         description: "“Shakespeare yarn?!” You’re in love with your own character and that’s probably why you’re single – your standards are so high! If someone’s already taken your heart, then good luck on your next book! You’re probably writing your perfect love story right now. And if you’re heartbroken, let us hear that 10-minute song about how he called you up again just to break you like a promise, so casually cruel in the name of being honest. </3"
     },
     {
         key: "co",
         name: "Communicator",
         nickname: "The youtubetomp3.com",
+        urlPath: "communicator",
         description: "“Best in chika goes to…” Do you have gud englis iskels? Because Lynn from Las Vegas will surely hire you! You’re never afraid to speak your thoughts aloud and in perfect tone and diction. Debates are one of your fortes and that’s why you’re untouchable. Nobody wants to mess with someone who can scold them with such eloquence! Like Google, you’re the source of everything…and everyone!"
     },
     {
         key: "il",
         name: "Illustrator",
         nickname: "The \"Drawerist\"",
+        urlPath: "illustrator",
         description: "“The Modern Leonardo da Vinci” You love watching cartoons/anime and because your ship didn’t sail, you’re on your desk illustrating headcanon stuff to comfort yourself (P.S.: We won’t judge >u0). Whether you are an artist by career or by hobby, putting your imaginations into attractive illustrations is something you’ll always be passionate about – it is who you are!"
     },
     {
         key: "dv",
         name: "Developer",
         nickname: "The Octocat",
+        urlPath: "developer",
         description: "\"print(“This is an overused template!”)”Anonymous”;\" Your favorite coffee? Java. Animal? Python. Gemstone? Ruby. Your best friend is Stackoverflow, and your version of Facebook is Github – where you post everything you do in your everyday life: code! – If you’ve printed your first “hello world” by the time of answering this quiz, congratulations! The next thing you’ll think about is how to build the next Google. Say you can hack Facebook accounts and you’ll be untouchable… but annoyed by many. "
     },
     {
         key: "jt",
-        name: "Jack-of-all-trades",
+        name: "Jack-of-all-Trades",
         nickname: "The Unicorn",
+        urlPath: "jack-of-all-trades",
         description: "“Edi ikaw na!” God poured every ounce of perfect in you! When Nicki Minaj(?) said, “Yes I do the cooking, yes I do the cleaning,” she’s probably referring to you. You’re always the “hakot awardee” of the year. Knowing everything but mastering none is always a blessing more than a curse. You are versatile, you can do anything. And that’s something to be proud of!"
     }
 ];

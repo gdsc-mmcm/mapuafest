@@ -1,6 +1,7 @@
 @use '../general' as *;
 
 .home {
+    background-color: white;
     .container {
         @include init-flex(column, 0, center, center);
         width: 80%;
@@ -12,12 +13,34 @@
             width: 100%;
             height: 100%;
 
+            h1 {
+                & > * {
+                    font-family: Google Sans, sans-serif;
+                }
+
+                .blue {
+                    color: $google-blue;
+                }
+
+                .red {
+                    color: $google-red;
+                }
+
+                .green {
+                    color: $google-green;
+                }
+
+                .yellow {
+                    color: $google-yellow;
+                }
+            }
+
             h2 {
                 padding: 1rem 0 2rem;
             }
 
             a {
-                @include init-btn($accent-color, $primary-color-one);
+                @include init-btn($google-blue, $primary-color-one);
             }
         }
     }
@@ -26,14 +49,15 @@
 @media only screen and (min-width: "1024px") {
     .home {
         .container {
-            gap: 4rem;
+            gap: 0;
 
             .greeting {
                 height: fit-content;
+                flex: 2;
+            }
 
-                a {
-                    padding: 1rem 4rem;
-                }
+            .logo {
+                margin-top: auto;
             }
         }
     }    

@@ -1,19 +1,48 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { items } from "../data";
+import { personalities, items } from "../data";
+import logo from "../images/logo.svg";
+import logoWhite from "../images/logo_w.svg";
+import fb from "../images/links/fb.svg";
+import ig from "../images/links/ig.svg";
+
+const getResultPagePath = (selectedAnswers) => {
+    let tally = [];
+    const personalityKeys = personalities.map(personality => personality.key);
+    for (const key of personalityKeys) {
+        tally.push({
+            personalityKey: key,
+            points: 0
+        });
+    }
+
+    items.forEach((item, i) => {
+        const answer = item.answers[selectedAnswers[i]];
+        for (const personalityKey of answer.personalityKeys) {
+            let tallyIndex = tally.findIndex(tallyItem => tallyItem.personalityKey === personalityKey);
+            tally[tallyIndex].points += 1;
+        }
+    });
+
+    let mostPoints = Math.max(...tally.map(personality => personality.points));
+    let userPersonality = tally.filter(personality => personality.points === mostPoints);
+    
+    let userPersonalityKey;
+    if (userPersonality.length >= 2) {
+        userPersonalityKey = "jt";
+    } else {
+        userPersonalityKey = userPersonality[0].personalityKey;
+    }
+
+    let futureUrlPath = personalities.find(personality => personality.key === userPersonalityKey).urlPath;
+    return futureUrlPath;
+};
+
+const questionColors = ["blue", "red", "yellow", "green"];
 
 function QuizPage() {
-    const navigate = useNavigate();
     const [currentSection, setCurrentSection] = useState("questions");
     const [selectedAnswers, setSelectedAnswers] = useState(Array(items.length).fill(-1));
-    const [points, setPoints] = useState({
-        "ds": 0,
-        "pv": 0,
-        "wr": 0,
-        "co": 0,
-        "il": 0,
-        "dv": 0,
-    });
 
     return (
         <div className="page quiz">
@@ -30,41 +59,43 @@ function QuizPage() {
 function CurrentQuizSection({section, setSection, selectedAnswers, setSelectedAnswers}) {
     if (section === "questions") {
         return <QuestionsSection setSection={setSection} selectedAnswers={selectedAnswers} setSelectedAnswers={setSelectedAnswers} />;
-    } else if (section === "promotion") {
-        return <PromotionSection setSection={setSection} />;
     } else {
-        return <SocialMediaSection />;
+        return <SocialMediaSection selectedAnswers={selectedAnswers}/>;
     }
 }
 
 function QuestionsSection({setSection, selectedAnswers, setSelectedAnswers}) {
     const [currentQuestion, setCurrentQuestion] = useState(1);
     let currentQuestionData = items[currentQuestion - 1];
+    let currentQuestionColor = questionColors[(currentQuestion - 1) % questionColors.length];
 
     const setSelectedAnswer = (i) => {
         const newSelectedAnswers = [...selectedAnswers];
         newSelectedAnswers[currentQuestion - 1] = i;
         setSelectedAnswers(newSelectedAnswers);
-        console.log(selectedAnswers.toString());
-    }
+    };
 
     return (
-        <section className="questions">
-            <div className="head">
-                <p>Question {currentQuestion}/{items.length}</p>
-                <div className="progress-bar-container">
-                    <div 
-                        className={`
-                            progress-bar 
-                            ${currentQuestion === items.length ? 
-                                'progress-bar--complete' : 
-                                'progress-bar--incomplete'
-                            }
-                        `}
-                        style={{
-                            width: `${currentQuestion / items.length * 100}%`
-                        }}>
-                            &nbsp;
+        <section className={`questions questions--${currentQuestionColor}`}>
+            <div 
+                className={`head`}
+            >
+                <div className="container">
+                    <p>Question {currentQuestion}/{items.length}</p>
+                    <div className="progress-bar-container">
+                        <div 
+                            className={`
+                                progress-bar 
+                                ${currentQuestion === items.length ? 
+                                    'progress-bar--complete' : 
+                                    'progress-bar--incomplete'
+                                }
+                            `}
+                            style={{
+                                width: `${currentQuestion / items.length * 100}%`
+                            }}>
+                                &nbsp;
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,7 +140,7 @@ function QuestionsSection({setSection, selectedAnswers, setSelectedAnswers}) {
                                 window.scrollTo({top: 0, left: 0, behavior: "auto"});
                                 
                                 if (currentQuestion === items.length) {
-                                    setSection("promotion");
+                                    setSection("social-media");
                                 }
                             }
                         }}
@@ -118,81 +149,59 @@ function QuestionsSection({setSection, selectedAnswers, setSelectedAnswers}) {
                     </button>
                 </div>
             </div>
-        </section>
-    );
-}
 
-function PromotionSection({setSection}) {
-    return (
-        <section className="promotion">
-            <h2>Bonus Question:</h2>
-            <h3>Would you mind liking and sharing our page?</h3>
-
-            <div className="choices">
-                <button 
-                    type="button" 
-                    className="confirm"
-                    onClick={() => setSection("social-media")}
-                >
-                    Yes, I will!
-                </button>
-
-                {/* <button
-                    type="button"
-                    className="reject"
-                    onClick={() => navigate("../result")}
-                >
-                    Next time
-                </button> */}
-
-                <NavLink to="../result" className="reject">
-                    Next time
-                </NavLink>
+            <div className="foot">
+                <p>What Type of Creator Are You?</p>
+                <img src={logo} className="logo"/>
             </div>
-
-            {/* <button
-                type="button"
-                className="finish"
-                onClick={() => navigate("../result")}
-            >
-                Finish &gt;
-            </button> */}
-
-            <NavLink to="../result" className="finish">
-                Finish &gt;
-            </NavLink>
         </section>
     );
 }
 
-function SocialMediaSection() {
+function SocialMediaSection({ selectedAnswers }) {
+    const navigate = useNavigate();
+
     return (
         <section className="social-media">
-            <h2>Be #InTheNow with our social media pages</h2>
+            <div className="container">
+                <h2>Be <span className="in-the-now">#InTheNow</span> on our social media</h2>
+                <div className="links">
+                    <a
+                        className="facebook"
+                        href="https://www.facebook.com/gdsc.mapuamcm/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <p>Facebook</p> <img src={fb} />
+                    </a>
 
-            <div className="links">
-                <a
-                    className="facebook"
-                    href="https://www.facebook.com/gdsc.mapuamcm/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Check out our Facebook
-                </a>
+                    <a
+                        className="instagram"
+                        href="https://www.instagram.com/gdsc_mapuamcm/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <p>Instagram</p> <img src={ig} />
+                    </a>
+                </div>
 
-                <a
-                    className="instagram"
-                    href="https://www.instagram.com/gdsc_mapuamcm/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {/* <NavLink to="../result" className="finish">
+                    Finish &gt;
+                </NavLink> */}
+
+                <button
+                    type="button"
+                    className="finish"
+                    onClick={() => navigate(`../result/${getResultPagePath(selectedAnswers)}`)}
                 >
-                    Follow us on Instagram
-                </a>
+                    Finish Quiz
+                </button>            
             </div>
 
-            <NavLink to="../result" className="finish">
-                Finish &gt;
-            </NavLink>
+            <div className="foot">
+                <p>What Type of Creator Are You?</p>
+                <img src={logoWhite} className="logo"/>
+            </div>            
         </section>
     )
 }
