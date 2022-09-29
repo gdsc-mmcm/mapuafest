@@ -307,3 +307,5 @@ let items = [
         ]
     },
 ];
+
+export { personalities, items };

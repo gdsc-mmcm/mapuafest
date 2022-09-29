@@ -1,5 +1,193 @@
 @use '../general' as *;
 
 .quiz {
+    width: 100%;
+
+    .questions {
+        @include init-flex(column, 4rem, center, center);
+        width: 90%;
+        height: 100%;
+        margin: 4rem 0;
+
+        .head {
+            @include init-flex(column, 1rem);
+            width: 100%;
+            margin-bottom: auto;
     
+            .progress-bar-container {
+                width: 100%;
+                height: 1rem;
+                border-radius: 32px;
+                overflow: hidden;
+
+                .progress-bar {
+                    transition: width 0.25s linear;
+
+                    &--complete {
+                        background-color: $accent-color;
+                    }
+
+                    &--incomplete {
+                        background-image: linear-gradient(to right, $accent-color 25%, lightgray);
+                    }
+                }
+            }
+        }
+
+        .question {
+            @include init-flex(column, 0, initial, center);
+            width: 100%;
+            height: 100%;
+
+            .answers {
+                @include init-flex(column, 1rem, center, center);
+                padding: min(10%, 3rem) 0;
+                width: 80%;
+
+                .answer {
+                    @include init-btn($accent-color, $primary-color-one);
+                    text-align: left;
+                    width: 100%;
+
+                    &--selected {
+                        @include init-btn($primary-color-one, $accent-color);
+                    }
+                }
+            }
+
+            .question-nav {
+                @include init-flex(row, 1rem, center, center);
+
+                button {
+                    @include init-plaintext-size(2);
+                }
+
+                .back {
+                    @include init-btn($primary-color-one, $accent-color);
+                }
+
+                .next {
+                    @include init-btn($accent-color, $primary-color-one);
+
+                    &--inactive {
+                        opacity: 0.5;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .promotion {
+        @include init-flex(column, 0, center, center);
+        width: 80%;
+        height: 100vh;
+
+        h3 {
+            padding: 2rem;
+        }
+
+        .choices {
+            @include init-flex(column, 1rem, center, center);
+            width: 100%;
+
+            & > * {
+                width: 80%;
+                text-align: left;
+            }
+
+            .confirm {
+                @include init-btn($primary-color-one, $accent-color);
+            }
+
+            .reject {
+                @include init-btn($accent-color, $primary-color-one);
+            }
+        }
+
+        .finish {
+            @include init-btn($accent-color, $primary-color-one);
+            @include init-plaintext-size(2);
+            width: 80%;
+            margin-top: 4rem;
+        }
+    }
+
+    .social-media {
+        @include init-flex(column, 2rem, center, center);
+        width: 80%;
+        height: 100vh;
+
+        .links {
+            @include init-flex(column, 1rem, center, center);
+            width: 100%;
+
+            a {
+                width: 80%;
+            }
+
+            .facebook {
+                @include init-btn(rgb(64, 129, 235), white);
+            }
+
+            .instagram {
+                @include init-btn($primary-color-one, $accent-color);
+            }
+        }
+
+        .finish {
+            @include init-btn($accent-color, $primary-color-one);
+            @include init-plaintext-size(2);
+            width: 80%;
+            margin-top: 2rem;            
+        }
+    }
+}
+
+@media only screen and (min-width: "1024px") {
+    .quiz {
+        .questions {
+            width: 80%;
+            gap: 2rem;
+
+            .head {
+                width: 80%;
+            }
+
+            .question {
+                .answers {
+                    width: 50%;
+                    padding: 1.5rem 0 3rem;
+
+                    .answer {
+                        user-select: none;
+                    }
+                }
+            }
+        }
+
+        .promotion {
+            width: 50%;
+
+            .choices {
+                width: 80%;
+            }
+
+            .finish {
+                width: fit-content;
+            }
+        }
+
+        .social-media {
+            width: 50%;
+
+            .links {
+                width: 80%;
+            }
+
+            .finish {
+                width: fit-content;
+            }
+        }
+    }
 }
