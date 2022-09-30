@@ -2,11 +2,6 @@ import React from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { personalities, items } from "../data";
 import logoWhite from "../images/logo_w.svg";
-import designerCharacter from "../images/characters/designer.png";
-import communicatorCharacter from "../images/characters/communicator.png";
-import developerCharacter  from "../images/characters/developer.png";
-import jackOfAllTradesCharacter from "../images/characters/jackofalltrades.png";
-import photovideographerCharacter from "../images/characters/photovideographer.png";
 
 export default function ResultPage() {
     const { personalityPath } = useParams();
@@ -27,7 +22,7 @@ export default function ResultPage() {
 
                 <div className="bottom">
                     <h3>The {personality.name}</h3>
-                    <p className="return">Not satisfied? <NavLink to="../quiz" className="retake">Retake the quiz</NavLink></p>
+                    <p className="return">Not satisfied? <NavLink to="../" className="retake">Retake the quiz</NavLink></p>
                 </div>
             </div>
             {/* <h1>{personality.nickname}</h1>

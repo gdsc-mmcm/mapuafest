@@ -55,9 +55,10 @@ const personalities = [
     },
     {
         key: "jt",
-        name: "Jack-of-all-Trades",
+        // name: "Jack-of-all-Trades",
+        name: "Unicorn",
         nickname: "The Unicorn",
-        urlPath: "jack-of-all-trades",
+        urlPath: "unicorn",
         imgSrc: jackOfAllTradesImg,
         description: "“Edi ikaw na!” God poured every ounce of perfect in you! When Nicki Minaj(?) said, “Yes I do the cooking, yes I do the cleaning,” she’s probably referring to you. You’re always the “hakot awardee” of the year. Knowing everything but mastering none is always a blessing more than a curse. You are versatile, you can do anything. And that’s something to be proud of!"
     }
