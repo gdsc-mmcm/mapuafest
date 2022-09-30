@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mapuafest/static/css/main.fed1d541.css",
-    "main.js": "/mapuafest/static/js/main.ef4d4b37.js",
+    "main.js": "/mapuafest/static/js/main.4b4c8fe2.js",
     "static/media/jackofalltrades.png": "/mapuafest/static/media/jackofalltrades.0f64b1f20dbf3ffb4068.png",
     "static/media/developer.png": "/mapuafest/static/media/developer.407a877b5190ae0d20ab.png",
     "static/media/photovideographer.png": "/mapuafest/static/media/photovideographer.3481007d096516f1ace6.png",
@@ -21,10 +21,10 @@
     "index.html": "/mapuafest/index.html",
     "static/media/fb.svg": "/mapuafest/static/media/fb.e8ee00b1b14f5ff7d74ec10f29841e15.svg",
     "main.fed1d541.css.map": "/mapuafest/static/css/main.fed1d541.css.map",
-    "main.ef4d4b37.js.map": "/mapuafest/static/js/main.ef4d4b37.js.map"
+    "main.4b4c8fe2.js.map": "/mapuafest/static/js/main.4b4c8fe2.js.map"
   },
   "entrypoints": [
     "static/css/main.fed1d541.css",
-    "static/js/main.ef4d4b37.js"
+    "static/js/main.4b4c8fe2.js"
   ]
 }
