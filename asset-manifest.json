@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mapuafest/static/css/main.fed1d541.css",
+    "main.css": "/mapuafest/static/css/main.9c11afd5.css",
     "main.js": "/mapuafest/static/js/main.4b4c8fe2.js",
     "static/media/jackofalltrades.png": "/mapuafest/static/media/jackofalltrades.0f64b1f20dbf3ffb4068.png",
     "static/media/developer.png": "/mapuafest/static/media/developer.407a877b5190ae0d20ab.png",
@@ -8,23 +8,23 @@
     "static/media/communicator.png": "/mapuafest/static/media/communicator.d620891f6fe7baf99fd7.png",
     "static/media/designer.png": "/mapuafest/static/media/designer.25846acb4fc71d7ffaa0.png",
     "static/media/OpenSans-VariableFont_wdth,wght.ttf": "/mapuafest/static/media/OpenSans-VariableFont_wdth,wght.ceb05254cedfa895b512.ttf",
-    "static/media/banner_green.png": "/mapuafest/static/media/banner_green.ceee32ba448a24bf5d21.png",
-    "static/media/banner_red.png": "/mapuafest/static/media/banner_red.c1ad398c0c9ba781a77a.png",
-    "static/media/banner_blue.png": "/mapuafest/static/media/banner_blue.50fc586285ecf138e541.png",
-    "static/media/banner_yellow.png": "/mapuafest/static/media/banner_yellow.66c1a5d5f34b4f30be6e.png",
     "static/media/GoogleSans-Medium-v1.27.ttf": "/mapuafest/static/media/GoogleSans-Medium-v1.27.81067d78370e5509b889.ttf",
     "static/media/GoogleSans-Regular-v1.27.ttf": "/mapuafest/static/media/GoogleSans-Regular-v1.27.19c78e33fc3a7243f219.ttf",
     "static/media/GoogleSans-Bold-v1.27.ttf": "/mapuafest/static/media/GoogleSans-Bold-v1.27.18cab8ca4b802f600b69.ttf",
+    "static/media/banner_green.webp": "/mapuafest/static/media/banner_green.c7263c101cc2c3a19fe6.webp",
+    "static/media/banner_red.webp": "/mapuafest/static/media/banner_red.0a6e77ae55627991c18d.webp",
+    "static/media/banner_yellow.webp": "/mapuafest/static/media/banner_yellow.9993cd9ecbdd6de0c8ea.webp",
+    "static/media/banner_blue.webp": "/mapuafest/static/media/banner_blue.cdd180b005d420ba029d.webp",
     "static/media/logo.svg": "/mapuafest/static/media/logo.b2f69580e2a99da4dd2a0c83a4f7e24d.svg",
     "static/media/logo_w.svg": "/mapuafest/static/media/logo_w.c16d568b391779ea26226a5cf846f38d.svg",
     "static/media/ig.svg": "/mapuafest/static/media/ig.9ca5d57b7d30d0d903cf7203cb9ea291.svg",
     "index.html": "/mapuafest/index.html",
     "static/media/fb.svg": "/mapuafest/static/media/fb.e8ee00b1b14f5ff7d74ec10f29841e15.svg",
-    "main.fed1d541.css.map": "/mapuafest/static/css/main.fed1d541.css.map",
+    "main.9c11afd5.css.map": "/mapuafest/static/css/main.9c11afd5.css.map",
     "main.4b4c8fe2.js.map": "/mapuafest/static/js/main.4b4c8fe2.js.map"
   },
   "entrypoints": [
-    "static/css/main.fed1d541.css",
+    "static/css/main.9c11afd5.css",
     "static/js/main.4b4c8fe2.js"
   ]
 }
