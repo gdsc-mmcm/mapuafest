@@ -266,7 +266,7 @@ a {
   display: none;
 }
 .quiz .questions--blue .head {
-  background-image: url("../images/banners/banner_blue.png");
+  background-image: url("../images/banners/banner_blue.webp");
 }
 .quiz .questions--blue .head .progress-bar--complete {
   background-color: #4285F4;
@@ -281,7 +281,7 @@ a {
   background-color: #4285F4;
 }
 .quiz .questions--red .head {
-  background-image: url("../images/banners/banner_red.png");
+  background-image: url("../images/banners/banner_red.webp");
 }
 .quiz .questions--red .head .progress-bar--complete {
   background-color: #EA4335;
@@ -296,7 +296,7 @@ a {
   background-color: #EA4335;
 }
 .quiz .questions--yellow .head {
-  background-image: url("../images/banners/banner_yellow.png");
+  background-image: url("../images/banners/banner_yellow.webp");
 }
 .quiz .questions--yellow .head .progress-bar--complete {
   background-color: #FBBC04;
@@ -311,7 +311,7 @@ a {
   background-color: #FBBC04;
 }
 .quiz .questions--green .head {
-  background-image: url("../images/banners/banner_green.png");
+  background-image: url("../images/banners/banner_green.webp");
 }
 .quiz .questions--green .head .progress-bar--complete {
   background-color: #34A853;
